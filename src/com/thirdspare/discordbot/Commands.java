@@ -28,10 +28,16 @@ public class Commands extends ListenerAdapter {
 
         if(command[0].equalsIgnoreCase("!rolld")){
             String msg1 = ("`This will be a roll soon`");
-            if (command.length==1){
+            if (command.length == 1){
 
                 event.getChannel().sendMessage(msg1).queue();
+            }else if (command.length == 2 && command[1].equalsIgnoreCase("-e")){
+                EmbedBuilder eb = new EmbedBuilder();
+                eb.setColor(Color.cyan);
+                eb.setDescription(msg);
+                event.getChannel().sendMessage(eb.build()).queue();
             }
+
 
 
         }
