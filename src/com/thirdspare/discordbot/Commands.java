@@ -16,7 +16,7 @@ public class Commands extends ListenerAdapter {
         if (!command[0].startsWith(Ref.PREFIX))
             return;
         if(command[0].equalsIgnoreCase("!ping")){
-            String msg = "Pong! `" + event.getJDA().getPing() + " '";
+            String msg = "Pong! `" + event.getJDA().getPing() + "`";
             if(command.length == 1){
                 event.getChannel().sendMessage(msg).queue();
             }else if (command.length == 2 && command[1].equalsIgnoreCase("-e")){
@@ -27,8 +27,13 @@ public class Commands extends ListenerAdapter {
             }
 
         if(command[0].equalsIgnoreCase("!rolld")){
+            String msg1 = ("`This will be a roll soon`");
+            if (command.length==1){
 
-            String msg1 = ("Your Roll: " + DiceRolling.roll());
+                event.getChannel().sendMessage(msg1).queue();
+            }
+
+
         }
 
             //1,2,3,4
